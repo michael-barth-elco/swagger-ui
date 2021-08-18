@@ -6,13 +6,23 @@ FROM nginx:1.19-alpine
 
 RUN apk --no-cache add nodejs
 
-LABEL maintainer="fehguy"
+LABEL maintainer="Michael Barth"
 
 ENV API_KEY "**None**"
 ENV SWAGGER_JSON "/app/swagger.json"
 ENV PORT 8080
 ENV BASE_URL ""
 ENV SWAGGER_JSON_URL ""
+ENV URL "openapi/iothub.yaml"
+ENV DEEP_LINING "true"
+ENV DEFAULT_MODEL_EXPAND_DEPTH 5
+ENV DOC_EXPANSION "none"
+ENV FILTER "true"
+ENV DOM_ID "#iothub"
+
+# copy rest doku
+COPY ./openapi/iothub.yaml /usr/share/nginx/html/openapi/
+COPY ./openapi/modules /usr/share/nginx/html/openapi/modules
 
 COPY ./docker/nginx.conf ./docker/cors.conf /etc/nginx/
 

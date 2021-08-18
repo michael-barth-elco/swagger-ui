@@ -1,4 +1,4 @@
 ---
-url: "https://petstore.swagger.io/v2/swagger.json"
-dom_id: "#swagger-ui"
+url: "http://localhost:8080/iothub.yaml"
+dom_id: "#iothub"
 validatorUrl: "https://validator.swagger.io/validator"
